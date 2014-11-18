@@ -36,7 +36,7 @@ public class PSCAPIServiceImpl implements PSCAPIService {
      * @see pscglobalsolutions.api.services.wsdl.PSCAPIService#getContacts(pscapp.services.types.UserInfoRequest  userInfo )*
      */
     public pscapp.services.types.ContactInfo getContacts(pscapp.services.types.UserInfoRequest userInfo) { 
-        LOG.info("Executing operation getContacts");
+       // LOG.info("Executing operation getContacts");
         System.out.println(userInfo);
         try {
             pscapp.services.types.ContactInfo _return = null;
@@ -51,8 +51,8 @@ public class PSCAPIServiceImpl implements PSCAPIService {
      * @see pscglobalsolutions.api.services.wsdl.PSCAPIService#loginViaApp(pscapp.services.types.UserInfoRequest2  userInfo2 )*
      */
     public pscapp.services.types.UserInfo loginViaApp(pscapp.services.types.UserInfoRequest userInfo2) { 
-        LOG.info("Executing operation loginViaApp");
-        System.out.println(userInfo2);
+//	   LOG.info("Executing operation loginViaApp");
+        LOG.info("userInfo2::" + userInfo2);
         try {
             pscapp.services.types.UserInfo _return = null;
             return _return;
