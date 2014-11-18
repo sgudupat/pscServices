@@ -16,7 +16,7 @@
 		<maven.compiler.source>1.6</maven.compiler.source>
 		<maven.compiler.target>1.6</maven.compiler.target>
 		<org.springframework.version>3.1.0.RELEASE</org.springframework.version>
-		<cxf.version>2.5.0</cxf.version>
+		<cxf.version>2.6.0</cxf.version>
 		<junit.version>3.8.1</junit.version>
 	</properties>
 	<dependencies>
@@ -107,7 +107,13 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-
+       <!-- CXF dependencies -->
+		<dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-api</artifactId>
+            <version>${cxf.version}</version>
+            <scope>compile</scope>
+        </dependency>
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-frontend-jaxws</artifactId>
@@ -119,7 +125,13 @@
 			<artifactId>cxf-rt-transports-http</artifactId>
 			<version>${cxf.version}</version>
 		</dependency>
-
+		
+		<dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-ws-security</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+      <!-- CXF dependencies -->
 	</dependencies>
 	<build>
 		<finalName>PSCAPI</finalName>
