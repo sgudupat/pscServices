@@ -37,6 +37,7 @@ public class PSCAPIServiceImpl implements PSCAPIService {
      */
     public pscapp.services.types.ContactInfo getContacts(pscapp.services.types.UserInfoRequest userInfo) { 
        // LOG.info("Executing operation getContacts");
+	    LOG.info("inside  getContacts method");
         System.out.println(userInfo);
         try {
             pscapp.services.types.ContactInfo _return = null;
