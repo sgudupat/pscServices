@@ -53,7 +53,6 @@ public class PSCAPIServiceImpl implements PSCAPIService {
      */
     public pscapp.services.types.UserInfo loginViaApp(pscapp.services.types.UserInfoRequest userInfo2) { 
         // LOG.info("Executing operation loginViaApp");
-		LOG.info("inside loginViaApp");
         LOG.info("userInfo2::" + userInfo2);
         try {
             pscapp.services.types.UserInfo _return = null;
