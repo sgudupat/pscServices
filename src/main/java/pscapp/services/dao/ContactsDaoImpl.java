@@ -23,6 +23,7 @@ public class ContactsDaoImpl implements ContactsDao {
 		//QueryParameters params = new QueryParameters();
 		//params.addParam(email);
 		//params.addParam(password);
+		//for gerrit change
 
 		return false;
 	}	
