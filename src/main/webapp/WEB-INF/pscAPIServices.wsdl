@@ -36,7 +36,7 @@
 			<xsd:element name="ContactInfoResponse">
 				<xsd:complexType>
 					<xsd:sequence>
-						<xsd:element minOccurs="0" name="result" nillable="true" type="tns:ContactInfo" />
+						<xsd:element minOccurs="0" name="result" nillable="true" type="regd:ContactInfo" />
 					</xsd:sequence>
 				</xsd:complexType>
 			</xsd:element>
