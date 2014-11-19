@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
-	xmlns:tns="http://pscglobalsolutions/API/services/wsdl"
-	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:tns="http://pscglobalsolutions/API/services/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="pscAPIServices"
-	targetNamespace="http://pscglobalsolutions/API/services/wsdl" 
+	targetNamespace="http://pscglobalsolutions/API/services/wsdl"
 	xmlns:regd="http://pscApp/services/types">
 	<wsdl:types>
 		<xsd:schema targetNamespace="http://pscApp/services/types">
@@ -20,19 +19,24 @@
 					<xsd:sequence>
 						<xsd:element name="emailAddress" type="xsd:string" />
 						<xsd:element name="password" type="xsd:string" />
-						<xsd:element name="userName" type="xsd:string"/>
-						<xsd:element name="firstName" type="xsd:string"/>
-						<xsd:element name="lastName" type="xsd:string"/>
-						<xsd:element name="accountStatus" type="xsd:string"/>
+						<xsd:element name="userName" type="xsd:string" />
+						<xsd:element name="firstName" type="xsd:string" />
+						<xsd:element name="lastName" type="xsd:string" />
+						<xsd:element name="accountStatus" type="xsd:string" />
 					</xsd:sequence>
 				</xsd:complexType>
 			</xsd:element>
-			<xsd:element name="ContactInfo">
-				<xsd:complexType>
+				<xsd:complexType  name="ContactInfo">
 					<xsd:sequence>
 						<xsd:element name="contactFirstName" type="xsd:string" />
 						<xsd:element name="contactLastName" type="xsd:string" />
 						<xsd:element name="contactEmailAddress" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			<xsd:element name="ContactInfoResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element minOccurs="0" name="result" nillable="true" type="tns:ContactInfo" />
 					</xsd:sequence>
 				</xsd:complexType>
 			</xsd:element>
@@ -42,7 +46,7 @@
 		<wsdl:part element="regd:UserInfoRequest" name="userInfo" />
 	</wsdl:message>
 	<wsdl:message name="pscGetContactsResponse">
-		<wsdl:part element="regd:ContactInfo" name="out" />
+		<wsdl:part element="regd:ContactInfoResponse" name="out" />
 	</wsdl:message>
 	<wsdl:message name="pscLoginViaAppRequest">
 		<wsdl:part element="regd:UserInfoRequest" name="userInfo2" />
@@ -61,9 +65,11 @@
 		</wsdl:operation>
 	</wsdl:portType>
 	<wsdl:binding name="PSCSOAPBinding" type="tns:PSCAPIService">
-		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
 		<wsdl:operation name="getContacts">
-			<soap:operation soapAction="http://pscglobalsolutions/API/services/wsdl#getContacts" />
+			<soap:operation
+				soapAction="http://pscglobalsolutions/API/services/wsdl#getContacts" />
 			<wsdl:input>
 				<soap:body use="literal" />
 			</wsdl:input>
@@ -72,7 +78,8 @@
 			</wsdl:output>
 		</wsdl:operation>
 		<wsdl:operation name="loginViaApp">
-			<soap:operation soapAction="http://pscglobalsolutions/API/services/wsdl#loginViaApp" />
+			<soap:operation
+				soapAction="http://pscglobalsolutions/API/services/wsdl#loginViaApp" />
 			<wsdl:input>
 				<soap:body use="literal" />
 			</wsdl:input>

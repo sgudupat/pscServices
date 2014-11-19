@@ -29,7 +29,10 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {"emailAddress","password"})
+@XmlType(name = "", propOrder = {
+    "emailAddress",
+    "password"
+})
 @XmlRootElement(name = "UserInfoRequest")
 public class UserInfoRequest {
 
