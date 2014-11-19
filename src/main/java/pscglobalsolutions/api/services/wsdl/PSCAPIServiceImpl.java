@@ -6,15 +6,7 @@
 
 package pscglobalsolutions.api.services.wsdl;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Logger;
-import javax.jws.WebMethod;
-import javax.jws.WebParam;
-import javax.jws.WebResult;
-import javax.jws.WebService;
-import javax.jws.soap.SOAPBinding;
-import javax.xml.bind.annotation.XmlSeeAlso;
 
 import pscapp.services.types.ContactInfo;
 import pscapp.services.types.ContactInfoResponse;
@@ -43,25 +35,23 @@ public class PSCAPIServiceImpl implements PSCAPIService {
     public ContactInfoResponse getContacts(pscapp.services.types.UserInfoRequest userInfo) { 
         LOG.info("Inside getContacts() methods");
     	try {
-    		List<pscapp.services.types.ContactInfo> contactInfoList = new ArrayList<ContactInfo>();
+    		pscapp.services.types.ContactInfo[] contactInfoList = new pscapp.services.types.ContactInfo[2];
             String email = userInfo.getEmailAddress();
             String password = userInfo.getPassword();
-            ContactInfo contactInfo = new ContactInfo();
-            /*contactInfoList = contactManager.getContacts(email, password);*/
             if(email.equalsIgnoreCase("tech.dillip111@gmail.com") && password.equalsIgnoreCase("dillip")){
-            	contactInfo.setContactFirstName("Dillip");
-            	contactInfo.setContactLastName("Das");
-            	contactInfo.setContactEmailAddress("tech.dillip@yahoo.com");
-            	contactInfoList.add(contactInfo);
+            	contactInfoList[0] = new ContactInfo();
+            	contactInfoList[0].setContactFirstName("Dillip");
+            	contactInfoList[0].setContactLastName("Das");
+            	contactInfoList[0].setContactEmailAddress("tech.dillip@yahoo.com");
             }
-            if(email.equalsIgnoreCase("tech.dillip111@gmail.com") && password.equalsIgnoreCase("dillip")){
-            	contactInfo.setContactFirstName("Sai");
-            	contactInfo.setContactLastName("Teja");
-            	contactInfo.setContactEmailAddress("saiteja@yahoo.com");
-            	contactInfoList.add(contactInfo);
+            if(email.equalsIgnoreCase("saiteja@yahoo.com") && password.equalsIgnoreCase("sai")){
+            	contactInfoList[1] = new ContactInfo();
+            	contactInfoList[1].setContactFirstName("Sai");
+            	contactInfoList[1].setContactLastName("Teja");
+            	contactInfoList[1].setContactEmailAddress("saiteja@yahoo.com");
             }
             ContactInfoResponse response = new ContactInfoResponse();
-            response.setContactInfo((ContactInfo[]) contactInfoList.toArray());
+            response.setContactInfo(contactInfoList);
             return response;
         } catch (java.lang.Exception ex) {
             ex.printStackTrace();
