@@ -19,6 +19,7 @@ public class ContactsDaoImpl implements ContactsDao {
 		int count = -1;
 		int count2 = -1;
 		//for gerrit testing
+		//for gerrit shanged id generation
 		String validEmailPasswordQuery = "SELECT COUNT(*) FROM USERS WHERE email = ? AND password = ? ";
 		String accountActiveQuery = "SELECT COUNT(*) FROM USERS WHERE email = ? AND status = 'ACTIVE' ";
 		//QueryParameters params = new QueryParameters();
