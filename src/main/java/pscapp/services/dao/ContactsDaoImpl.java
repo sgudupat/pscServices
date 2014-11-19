@@ -18,7 +18,7 @@ public class ContactsDaoImpl implements ContactsDao {
 		boolean result = false;
 		int count = -1;
 		int count2 = -1;
-		//removing password from query
+		//removing password from first query
 		String validEmailPasswordQuery = "SELECT COUNT(*) FROM USERS WHERE email = ?  ";
 		String accountActiveQuery = "SELECT COUNT(*) FROM USERS WHERE email = ? AND status = 'ACTIVE' ";
 		//QueryParameters params = new QueryParameters();
