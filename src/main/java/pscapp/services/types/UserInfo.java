@@ -200,5 +200,5 @@ public class UserInfo {
     public void setAccountStatus(String value) {
         this.accountStatus = value;
     }
-
+  //Adding to test Gerrit changes
 }
