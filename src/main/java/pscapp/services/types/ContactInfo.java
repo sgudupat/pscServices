@@ -116,4 +116,5 @@ public class ContactInfo {
         this.contactEmailAddress = value;
     }
 
+//todo: add toString method
 }
