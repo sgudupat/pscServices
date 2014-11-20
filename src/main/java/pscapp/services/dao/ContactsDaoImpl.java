@@ -18,14 +18,16 @@ public class ContactsDaoImpl implements ContactsDao {
 		boolean result = false;
 		int count = -1;
 		int count2 = -1;
+//To see where push happens
 		//for gerrit testing
-		//for gerrit shanged id generation
+		//for gerrit chan id generation
+		//check the new change
+
 		String validEmailPasswordQuery = "SELECT COUNT(*) FROM USERS WHERE email = ? AND password = ? ";
 		String accountActiveQuery = "SELECT COUNT(*) FROM USERS WHERE email = ? AND status = 'ACTIVE' ";
 		//QueryParameters params = new QueryParameters();
 		//params.addParam(email);
 		//params.addParam(password);
-		//for gerrit change
 
 		return false;
 	}	
