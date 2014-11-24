@@ -7,14 +7,11 @@ import pscapp.services.types.ContactInfo;
 public class ContactsDaoImpl implements ContactsDao {
 
 	public List<ContactInfo> getContacts(String email, String password) {
-
-		if(authenticateUserLogin(email, password)){
-
-		}
+		
 		return null;
 	}
 
-	private boolean authenticateUserLogin(String email, String password) {
+	public boolean authenticateUserLogin(String email, String password) {
 		boolean result = false;
 		int count = -1;
 		int count2 = -1;
