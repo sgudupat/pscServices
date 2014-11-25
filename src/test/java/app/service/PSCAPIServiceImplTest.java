@@ -22,7 +22,8 @@ public class PSCAPIServiceImplTest {
 	@Test
 	public void testGetContacts() {
 		System.out.println("Inside testGetContacts method ");
-		System.out.println("hello");
+		System.out.println("hello ");
+		 
 		//UserInfoRequest userInfo = new UserInfoRequest();
 		//1. Pass UserInfo who have 1 contact
 		//2. Pass UserInfo who have more than 1 contact
