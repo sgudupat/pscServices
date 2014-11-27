@@ -2,13 +2,33 @@ package pscapp.services.dao;
 
 import java.util.List;
 
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import pscapp.services.manager.ContactsManager;
 import pscapp.services.types.ContactInfo;
 
 public class ContactsDaoImpl implements ContactsDao {
+	
+	
 
+	private JdbcTemplate jdbcTemplate;
+
+	public void setDataSource(DataSource dataSource) {
+		this.jdbcTemplate = new JdbcTemplate(dataSource);
+	}
 	public List<ContactInfo> getContacts(String email, String password) {
+		// TODO:: 
+		try{
+		String sql ="select * from contacts where email = ? ";
+		return (List<ContactInfo>) this.jdbcTemplate.queryForObject(sql,new Object[] { email }, String.class);
+		} catch(Exception e){
+			System.out.println("email does not exists");
+			return null;
+		}
 		
-		return null;
 	}
 
 	public boolean authenticateUserLogin(String email, String password) {
