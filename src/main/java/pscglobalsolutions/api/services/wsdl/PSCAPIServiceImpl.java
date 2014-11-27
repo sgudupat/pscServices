@@ -35,7 +35,7 @@ public class PSCAPIServiceImpl implements PSCAPIService {
     public ContactInfoResponse getContacts(pscapp.services.types.UserInfoRequest userInfo) { 
         LOG.info("Inside getContacts() methods");
     	try {
-    		pscapp.services.types.ContactInfo[] contactInfoList = new pscapp.services.types.ContactInfo[2];
+    		pscapp.services.types.ContactInfo[] contactInfoList = new pscapp.services.types.ContactInfo[4];
             String email = userInfo.getEmailAddress();
             String password = userInfo.getPassword();
             if(email.equalsIgnoreCase("tech.dillip111@gmail.com") && password.equalsIgnoreCase("dillip")){
@@ -44,11 +44,23 @@ public class PSCAPIServiceImpl implements PSCAPIService {
             	contactInfoList[0].setContactLastName("Das");
             	contactInfoList[0].setContactEmailAddress("tech.dillip@yahoo.com");
             }
-            if(email.equalsIgnoreCase("saiteja@yahoo.com") && password.equalsIgnoreCase("sai")){
+            if(email.equalsIgnoreCase("tech.dillip111@gmail.com") && password.equalsIgnoreCase("dillip")){
             	contactInfoList[1] = new ContactInfo();
             	contactInfoList[1].setContactFirstName("Sai");
             	contactInfoList[1].setContactLastName("Teja");
             	contactInfoList[1].setContactEmailAddress("saiteja@yahoo.com");
+            }
+            if(email.equalsIgnoreCase("tech.dillip111@gmail.com") && password.equalsIgnoreCase("dillip")){
+            	contactInfoList[2] = new ContactInfo();
+            	contactInfoList[2].setContactFirstName("Anil");
+            	contactInfoList[2].setContactLastName("Kumar");
+            	contactInfoList[2].setContactEmailAddress("anilkumar@yahoo.com");
+            }
+            if(email.equalsIgnoreCase("tech.dillip111@gmail.com") && password.equalsIgnoreCase("dillip")){
+            	contactInfoList[3] = new ContactInfo();
+            	contactInfoList[3].setContactFirstName("Murali");
+            	contactInfoList[3].setContactLastName("Kumar");
+            	contactInfoList[3].setContactEmailAddress("murali333@gmail.com");
             }
             ContactInfoResponse response = new ContactInfoResponse();
             response.setContactInfo(contactInfoList);

@@ -1,12 +1,11 @@
-package pscapp.services.dao;
+package pscapp.services.service;
 
 import java.util.List;
 
 import pscapp.services.types.ContactInfo;
 
-public interface ContactsDao {
-
+public interface ContactsService {
+	
 	List<ContactInfo> getContacts(String email, String password);
 
-	boolean authenticateUserLogin(String email, String password);
 }
