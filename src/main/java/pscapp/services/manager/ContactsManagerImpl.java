@@ -10,9 +10,10 @@ public class ContactsManagerImpl implements ContactsManager {
 	private ContactsDao contactDao;
 
 	public List<ContactInfo> getContacts(String email, String password) {
-		return contactDao.getContacts(email, password);
+			if(contactDao.authenticateUserLogin(email, password)){
+		        return contactDao.getContacts(email, password);
+			}
+			return null;
 	}
-
-
 
 }
