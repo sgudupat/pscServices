@@ -9,7 +9,8 @@
  <context-param>
      <param-name>contextConfigLocation</param-name>
      <param-value>
-         /WEB-INF/services.xml
+         /WEB-INF/soap-services.xml
+         /WEB-INF/rest-services.xml
      </param-value>
   </context-param>
 	<servlet>

@@ -7,6 +7,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
+import org.codehaus.jackson.annotate.JsonProperty;
 
 /**
  * <p>Java class for anonymous complex type.
@@ -29,16 +30,16 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "emailAddress",
-    "password"
-})
+@XmlType(name = "", propOrder = {"emailAddress","password"})
 @XmlRootElement(name = "UserInfoRequest")
 public class UserInfoRequest {
 
     @XmlElement(required = true)
+    @JsonProperty(value = "emailAddress")
     protected String emailAddress;
+
     @XmlElement(required = true)
+    @JsonProperty(value = "password")
     protected String password;
 
     /**
