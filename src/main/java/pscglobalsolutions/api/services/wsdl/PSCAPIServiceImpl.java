@@ -6,8 +6,12 @@
 
 package pscglobalsolutions.api.services.wsdl;
 
+import java.util.List;
 import java.util.logging.Logger;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import pscapp.services.service.ContactsService;
 import pscapp.services.types.ContactInfo;
 import pscapp.services.types.ContactInfoResponse;
 
@@ -32,9 +36,17 @@ public class PSCAPIServiceImpl implements PSCAPIService {
     /* (non-Javadoc)
      * @see pscglobalsolutions.api.services.wsdl.PSCAPIService#getContacts(pscapp.services.types.UserInfoRequest  userInfo )*
      */
-    public ContactInfoResponse getContacts(pscapp.services.types.UserInfoRequest userInfo) { 
+
+    @Autowired
+    private ContactsService contactsService;
+
+    public ContactInfoResponse getContacts(pscapp.services.types.UserInfoRequest userInfo) {
         LOG.info("Inside getContacts() methods");
     	try {
+            LOG.info("userInfo::" + userInfo);
+            List<ContactInfo> contacts = contactsService.getContacts(userInfo.getEmailAddress(), userInfo.getPassword());
+            LOG.info("contacts::" + contacts);
+/*
     		pscapp.services.types.ContactInfo[] contactInfoList = new pscapp.services.types.ContactInfo[4];
             String email = userInfo.getEmailAddress();
             String password = userInfo.getPassword();
@@ -65,6 +77,8 @@ public class PSCAPIServiceImpl implements PSCAPIService {
             ContactInfoResponse response = new ContactInfoResponse();
             response.setContactInfo(contactInfoList);
             return response;
+*/
+            return null;
         } catch (java.lang.Exception ex) {
             ex.printStackTrace();
             throw new RuntimeException(ex);
